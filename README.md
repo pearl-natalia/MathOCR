@@ -13,6 +13,10 @@
 <p>Dataset of images gets converted into a 2D array (each instance of the datatset is a row, and within each row is an array of 728 elements (pixels)).</p>
 <img width="627" alt="image" src="https://github.com/pearl-natalia/digit-detection/assets/145855287/bb959403-e11c-4682-a908-969bf6a04f6b">
 
+<h2>Greyscale Table</h2>
+ <img width="758" alt="Screenshot 2024-05-14 at 10 19 16 PM" src="https://github.com/pearl-natalia/digit-detection/assets/145855287/bfc7c385-b2dc-4753-9e4d-c85ba2dba37d">
+
+
 
 <h3></h3>
 
