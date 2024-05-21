@@ -1,7 +1,5 @@
 <h1>Neural Network - Digit Detection</h1><br><br>
-<p align="center">
-  <img width="479" alt="image" src="https://github.com/pearl-natalia/digit-detection/assets/145855287/11c7ccf7-debe-4e6f-b9b9-4a03b3a13208">
-</p>
+<p align="center"><img width="479" alt="image" src="https://github.com/pearl-natalia/digit-detection/assets/145855287/11c7ccf7-debe-4e6f-b9b9-4a03b3a13208"></p>
 
 
 <h2>The Model</h2>
@@ -18,5 +16,17 @@
 
 
 
-<h3></h3>
+<h2>Step 1: Segmenting Image into Terms & Math Operators</h2>
+<p>Resize: Scale down image to reduce computational overhead (I used width of 1000px, height based on aspect ratio, INTER_AREA interpolation method to preserve image quality).</p>
+<p>Threshold: Convert to greyscale and using open cv's threshold method (pixels above certain value become white, then invert img so text = white, backgrounf = black). This will format image for dilation.</p>
+<p>Dilation: Extend white to merge nearby digits together, allowing machine to detect with digits belong together in a term. This gives meaining to the numbers. Pixels are dilated with a kernel (see below); to identify terms, a kernel with a large width is ideal incase digits are spaced out.</p>
+<p align="center"><img width="740" alt="image" src="https://github.com/pearl-natalia/OCR-from-scratch/assets/145855287/6dcc8dbc-399e-469d-9352-690ae3364acc"></p>
+<p>Contours: Use OpenCV's findContours() function to identify bounding edges of the terms + operators in the equation. This function will operate on the dilated image, using RETR_EXTERNAL to omit any inner contours and CHAIN_APPROX_NONE to store all points of the contour for a more accurate result. OpenCV uses Suzuki's algorithm to calculate contour points.</p>
+
+
+
+
+
+
+
 
