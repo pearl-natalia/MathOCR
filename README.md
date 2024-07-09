@@ -1,4 +1,4 @@
-<h1>Mathematical OCR - Equation Recognition and Calculation</h1><br><br>
+<h1>Mathematical OCR - Equation Recognition & Calculation</h1><br><br>
 <h2>Step 1: Segmenting Image into Terms & Math Operators</h2>
 <p>Resize: Scale down image to reduce computational overhead (I used width of 1000 px, height based on aspect ratio, INTER_AREA interpolation method to preserve image quality).</p>
 <p>Threshold: Convert to greyscale and using OpenCv's threshold method (pixels above certain value become white(255), then invert img so text = white, background = black). This will format image for dilation.</p>
