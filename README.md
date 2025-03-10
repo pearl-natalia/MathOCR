@@ -2,7 +2,6 @@
 <h2>Step 1: Segmenting Image into Terms & Math Operators</h2>
 <p>Resize: Scale down image to reduce computational overhead (I used width of 1000 px, height based on aspect ratio, INTER_AREA interpolation method to preserve image quality).</p>
 <p>Threshold: Convert to greyscale and using OpenCv's threshold method (pixels above certain value become white(255), then invert img so text = white, background = black). This will format image for dilation.</p>
-<p align="center"> <img width="100%" alt="Screenshot 2024-05-14 at 10 19 16 PM" src="https://github.com/pearl-natalia/digit-detection/assets/145855287/bfc7c385-b2dc-4753-9e4d-c85ba2dba37d"></p>
 <p>Dilation: Extend white regions to merge nearby digits together, allowing machine to detect which digits belong together in a term. This gives meaning to the numbers. Pixels are dilated with a kernel (see below); to identify terms, a kernel with a large width is ideal in case digits are spaced out.</p>
 <p align="center"><img width="100%" alt="image" src="https://github.com/pearl-natalia/OCR-from-scratch/assets/145855287/6dcc8dbc-399e-469d-9352-690ae3364acc"></p>
 <p>Contour Points: Use OpenCV's findContours() function to identify bounding edges of the terms + operators in the equation. This function will operate on the dilated image, using RETR_EXTERNAL to omit any inner contours and CHAIN_APPROX_NONE to store all points of the contour for a more accurate result. OpenCV uses Suzuki's algorithm to calculate contour points.</p>
